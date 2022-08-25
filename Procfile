@@ -1,1 +1,1 @@
-web: waitress-serve --port=8000  myexample.wsgi:application
+web: waitress-serve --listen=127.0.0.1:8080  myexample.wsgi:application
