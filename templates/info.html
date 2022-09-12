@@ -145,6 +145,10 @@
             border: none;
             outline: none;
         }
+        .an{
+            text-decoration: none;
+            color: black;
+        }
     </style>
 </head>
 
@@ -164,7 +168,7 @@
             <label for="">Your Partner Name FirstLetter : {{infos.letter}}</label>
         </div>
         <div class="share">
-            <button>Share With Friends</button>
+            <a class="an" href="whatsapp://send?text=https://example-django-site.herokuapp.com/" data-action="share/whatsapp/share"  target="_blank"> Share to WhatsApp </a>   
         </div>
         <hr>
         <div class="users">
