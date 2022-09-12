@@ -1,1 +1,1 @@
-web: gunicorn myexample.wsgi
+web: gunicorn FindPartnerLetter.wsgi
