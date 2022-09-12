@@ -1,1 +1,1 @@
-web: gunicorn FindPartnerLetter.wsgi
+web: gunicorn PartnerApp.wsgi
