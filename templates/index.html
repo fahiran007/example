@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        color: rgb(238, 246, 246);
+        padding: 0 0 0 0.4rem;
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: rgb(12, 89, 244);
+      }
+
+      .items {
+        width: 94vw;
+        margin: auto;
+      }
+
+      body {
+        width: 100vw;
+      }
+
+      .intro {
+        font-size: 1.5rem;
+        display: block;
+        margin: 1rem 0 1rem 0;
+      }
+
+      input {
+        display: block;
+        height: 50px;
+        width: 100%;
+        border-radius: 0.3rem;
+        border: none;
+        outline: none;
+        background-color: rgb(235, 224, 224);
+        margin: 1rem 0 1rem 0;
+        padding: 0 3% 0 3%;
+      }
+
+      .next {
+        height: 40px;
+        width: 48%;
+        border-radius: 0.4rem;
+        border: none;
+        font-size: 1.1rem;
+        font-weight: bold;
+        background-color: rgb(0, 140, 255);
+        color: white;
+        margin: 1%;
+      }
+
+      .pre {
+        height: 40px;
+        width: 48%;
+        border-radius: 0.4rem;
+        border: none;
+        font-size: 1.1rem;
+        font-weight: bold;
+        background-color: rgb(252, 247, 247);
+        color: white;
+        color: black;
+        border: black solid 2px;
+        margin: 1%;
+        float: left;
+      }
+
+      .title {
+        font-size: 1.3rem;
+      }
+
+      .dis-none {
+        display: none;
+      }
+
+      .btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+
+      
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <img src="" alt="" />
+      <h3>Find First Letter</h3>
+    </header>
+    <div class="items">
+      <form action="/" method="post">
+        {% csrf_token %}
+        <label class="intro" for=""
+          >Let's Find your life partner first letter of name</label
+        >
+        <div class="item in">
+          <label class="title" for="">Enter your Name:</label>
+          <input
+            type="text"
+            placeholder="Enter your name"
+            name="name"
+            required
+          />
+          <div class="btns">
+            <button onclick="preview(0)" class="pre">Preview</button>
+            <button onclick="next(0)" class="next" id="btn1">Next</button>
+          </div>
+        </div>
+        <div class="item in dis-none">
+          <label class="title" for="">Enter your Nickname:</label>
+          <input
+            type="text"
+            placeholder="Enter your nickname"
+            name="nickname"
+            required
+          />
+          <div class="btns">
+            <button onclick="preview(1)" class="pre">Preview</button>
+            <button onclick="next(1)" class="next" id="btn1">Next</button>
+          </div>
+        </div>
+        <div class="item in dis-none">
+          <label class="title" for="">Enter your Birth Year:</label>
+          <input
+            type="text"
+            placeholder="Enter your Birth Year"
+            name="birthyear"
+            required
+          />
+          <div class="btns">
+            <button onclick="preview(2)" class="pre">Preview</button>
+            <button onclick="next(2)" class="next" id="btn1">Next</button>
+          </div>
+        </div>
+        <div class="item in dis-none">
+          <label class="title" for="">Your best friend:</label>
+          <input
+            type="text"
+            placeholder="Your best friend name"
+            name="bestfriend"
+            required
+          />
+          <div class="btns">
+            <button onclick="preview(3)" class="pre">Preview</button>
+            <button onclick="next(3)" class="next" id="btn1">Next</button>
+          </div>
+        </div>
+        <div class="item in dis-none">
+          <label class="title" for="">Your hobby:</label>
+          <input
+            type="text"
+            placeholder="What is your hobby"
+            name="hobby"
+            required
+          />
+          <div class="btns">
+            <button onclick="preview(4)" class="pre">Preview</button>
+            <button onclick="next(4)" type="submit" class="next">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+
+    <script>
+      function next(index) {
+        let idxNext = index + 1;
+        let idxNow = index;
+        let itemNext = document.getElementsByClassName("in")[idxNext];
+        let itemNow = document.getElementsByClassName("in")[idxNow];
+        itemNext.classList.remove("dis-none");
+        itemNow.classList.add("dis-none");
+      }
+      function preview(index) {
+        let idxPreview = index - 1;
+        let idxNow = index;
+        let itemPreview = document.getElementsByClassName("in")[idxPreview];
+        let itemNow = document.getElementsByClassName("in")[idxNow];
+        itemPreview.classList.remove("dis-none");
+        itemNow.classList.add("dis-none");
+      }
+    </script>
+  </body>
+</html>

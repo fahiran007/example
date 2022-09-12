@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .name {
+            display: block;
+            margin: 0.5rem 0 0.5rem 0;
+        }
+
+        .infos {
+            width: 94%;
+            margin: auto;
+            font-size: 1.1rem;
+            color: rgb(27, 27, 27);
+        }
+
+        .ans {
+            background-color: blue;
+            font-size: 1.5rem;
+            width: 100%;
+            margin: auto;
+            border-radius: 0.5rem;
+            color: white;
+            padding: 0.6rem 0 0.6rem 0.3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .user {
+            width: 100%;
+            background-color: rgb(242, 226, 226);
+            margin-top: 0.4rem;
+            font-size: 0.8rem;
+            border-radius: 0.3rem;
+            padding: 0.5rem 0 0.5rem 0.3rem;
+            color: black;
+            border: black solid 2px;
+        }
+
+        .users {
+            margin: auto;
+            width: 100%;
+        }
+
+        .userName {
+            display: block;
+            width: 25%;
+            float: left;
+        }
+
+        .header {
+            margin-top: 0.4rem;
+            width: 100%;
+            background-color: rgb(30, 22, 95);
+            padding: 0.5rem 0 0.5rem 0.3rem;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-radius: 0.4rem;
+            color: aqua;
+        }
+
+        .hname {
+            display: block;
+            width: 25%;
+            float: left;
+        }
+
+        .best {
+            width: 30%;
+            display: block;
+            float: right;
+        }
+
+        .hobby {
+            display: block;
+            width: 25%;
+            float: left;
+        }
+
+        .bf {
+            width: 30%;
+            float: right;
+            display: flex;
+        }
+
+        header {
+            height: 5.4vh;
+            width: 100%;
+            background-color: rgb(0, 64, 255);
+            display: flex;
+            align-items: center;
+        }
+
+        h3 {
+            margin-left: 0.4rem;
+            color: whitesmoke;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        .userinfos {
+            color: rgb(55, 53, 53);
+            background-color: wheat;
+            border-radius: 0.3rem;
+            border: solid rgb(78, 76, 76) 2px;
+            margin: 0.35rem 0 0.35rem 0;
+            padding-left: 0.3rem;
+        }
+
+        .hobbys {
+            float: left;
+            display: block;
+            width: 32%;
+        }
+
+        .share {
+            width: 100%;
+            margin: 0.4rem auto 0 auto;
+            height: 4vh;
+            background-color: darkcyan;
+            border-radius: 0.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0.4rem;
+        }
+
+        .share button {
+            font-weight: bold;
+            color: rgb(236, 231, 231);
+            background: none;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header onclick="go_back()">
+        <h3>Go To Home</h2>
+    </header>
+    <div class="infos dis-none" id="infos">
+        <div class="userinfos">
+            <label id="names" class="name" for="">Name: {{infos.name}}</label>
+            <label class="name" for="">Nick name: {{infos.nickname}}</label>
+            <label class="name" for="">Birth year: {{infos.birthyear}}</label>
+            <label class="name" for="">Best Friend: {{infos.bestfriend}}</label>
+            <label class="name" for="">Hobby: {{infos.hobby}}</label>
+        </div>
+        <div class="ans">
+            <label for="">Your Partner Name FirstLetter : {{infos.letter}}</label>
+        </div>
+        <div class="share">
+            <button>Share With Friends</button>
+        </div>
+        <hr>
+        <div class="users">
+            <div class="header">
+                <label class="hname" for="">Name</label>
+                <label class="best" for="">BestFriend</label>
+                <label class="partner" for="">Partner</label>
+                <label class="hobby" for="">Hobby</label>
+            </div>
+            {% for data in datas %}
+            <div class="user">
+                <label class="userName" for="">{{data.name}}</label>
+                <label for="" class="letter">{{data.letter}}</label>
+                <label for="" class="hobbys">{{data.Hobby}}</label>
+                <label for="" class="bf">{{data.Bestfriend}}</label>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        function go_back() {
+            location.href = '/'
+        }
+    </script>
+</body>
+
+</html>
