@@ -13,7 +13,7 @@ def home(request):
         hobby = request.POST.get('hobby')
         goal = request.POST.get('goal')
         li = ['ABDFGHIJLMNPRST']
-        if userinfo.objects.filter(name=name,Bestfriend=bestfriend,Birthyear=birthyear).first():
+        if userinfo.objects.filter(name=name,Bestfriend=bestfriend).first():
             inf = userinfo.objects.get(name=name,nickName=nickname,Birthyear=birthyear,Bestfriend=bestfriend)
             letter = inf.letter
             idx = inf.idx
