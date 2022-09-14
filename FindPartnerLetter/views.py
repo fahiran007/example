@@ -11,6 +11,7 @@ def home(request):
         birthyear = request.POST.get('birthyear')
         bestfriend = request.POST.get('bestfriend')
         hobby = request.POST.get('hobby')
+        goal = request.POST.get('goal')
         li = ['ABDFGHIJLMNPRST']
         if userinfo.objects.filter(name=name,Bestfriend=bestfriend,Birthyear=birthyear).first():
             inf = userinfo.objects.get(name=name,nickName=nickname,Birthyear=birthyear,Bestfriend=bestfriend)
@@ -34,6 +35,6 @@ def info(request,idx):
             'letter':inf.letter,
             'idx':idx
         }
-    datas = userinfo.objects.all()
+    datas = userinfo.objects.all().order_by('-id')
     return render(request, 'info.html',{'infos':infos,'datas':datas})
     
